@@ -1,6 +1,5 @@
 import datetime
 from models import WeatherBase
-# Чтобы все не было в куче "работа с базой, парсинг, создание изображения" разнесите по модулям.
 
 
 class DatabaseUpdater:
@@ -13,7 +12,6 @@ class DatabaseUpdater:
                 date = self.weather_dict[date_from][0]
                 temperature = self.weather_dict[date_from][1]
                 weather = self.weather_dict[date_from][2]
-                # Зачем переменная? Метод "create" автоматически сохраняет таблицу
                 WeatherBase.create(
                     date=date_from,
                     date_rus=date,
